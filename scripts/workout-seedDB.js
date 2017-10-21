@@ -60,7 +60,7 @@ const workoutSeed = [
 
   db.Workout
   .remove({})
-  .then(() => db.Exercise.collection.insertMany(workoutSeed))
+  .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);

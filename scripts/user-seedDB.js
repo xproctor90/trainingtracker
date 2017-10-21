@@ -25,7 +25,7 @@ const userSeed = [
 
 db.User
 .remove({})
-.then(() => db.Exercise.collection.insertMany(userSeed))
+.then(() => db.User.collection.insertMany(userSeed))
 .then(data => {
   console.log(data.insertedIds.length + " records inserted!");
   process.exit(0);
