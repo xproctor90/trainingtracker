@@ -2,13 +2,13 @@ const router = require("express").Router();
 const exerciseController = require("../../controllers/exerciseController");
 
 // Matches with "/api/exercise"
-router.route("/")
+router.route("/exercise")
   .get(exerciseController.findAll)
   .post(exerciseController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/exercise/:id"
 router
-  .route("/:id")
+  .route("/exercise/:id")
   .get(exerciseController.findById)
   .put(exerciseController.update)
   .delete(exerciseController.remove);
