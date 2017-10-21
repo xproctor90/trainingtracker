@@ -18,9 +18,10 @@ class Workouts extends Component {
 
   loadWorkout = () => {
     API.getWorkouts()
-      .then(res =>
+      .then(res => {
+        console.log("workout: " + res)
         this.setState({ exercises: res.data, name: "" })
-      )
+      })
       .catch(err => console.log(err));
   };
 
@@ -42,13 +43,12 @@ class Workouts extends Component {
               <List>
                 {this.state.exercises.map(exercise => (
                   <ListItem key={exercise._id}>
-                    <Link to={"/exercise/" + exercise._id}>
+                    <Link to={"/workout/" + exercise._id}>
                       <strong>
                         {exercise.name}
                         {exercise.description}
                       </strong>
                     </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteExercise(exercise._id)} /> */}
                   </ListItem>
                 ))}
               </List>

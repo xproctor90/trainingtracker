@@ -14,19 +14,6 @@ class User extends Component {
     password: "",
   };
 
-//   componentDidMount() {
-//     this.loadPage();
-//   }
-
-//   loadPage = () => {
-//     window.location.href = "http://localhost:3000/"
-//     //   .then(res =>
-//     //     this.setState({ navigate: false })
-//     //   )
-//     //   .catch(err => console.log(err));
-//   };
-
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -40,10 +27,6 @@ class User extends Component {
   };
 
   render() {   
-    // const { navigate } = this.state;
-    //   if (navigate) {
-    //     return <Redirect to="/" push={true} />
-    // }
     return (
       <Container fluid>
         <Row>
