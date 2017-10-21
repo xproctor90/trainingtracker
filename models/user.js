@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
   id:  Number,
-  name: [{firstName: String, lastName: String}],
+  firstName: String,
+  lastName: String,
   username: {
     type: String,
     trim: true,
@@ -23,9 +24,9 @@ var userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+    match: [/.+\@.+\..+/, "Please enter a valid email address"]
   },
-  workouts: [{workout: [Schema.Types.Mixed]}],
+  workouts: [String],
   userCreated: {
     type: Date,
     default: Date.now

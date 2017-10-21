@@ -5,9 +5,9 @@ var exerciseSchema = new Schema({
   id:  Number,
   name: String,
   description: String,
-  image: String
+  image: [String]
 });
 
-const Exercise = mongoose.model("Workout", exerciseSchema);
+const Exercise = mongoose.model("Exercise", exerciseSchema);
 
 module.exports = Exercise;
