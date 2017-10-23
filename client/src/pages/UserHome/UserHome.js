@@ -19,8 +19,8 @@ class Workouts extends Component {
   loadWorkout = () => {
     API.getWorkouts()
       .then(res => {
-        console.log("workout: " + res.data[0].exercises[0])
-        this.setState({ exercises: res.data, name: "" })
+        console.log("workout: " + res[0].exercises)
+        this.setState({ exercises: res[0].exercises, name: "" })
       })
       .catch(err => console.log(err));
   };
