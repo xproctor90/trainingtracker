@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Redirect } from 'react-router';
+// import API from "../../utils/API";
+// import { Link } from "react-router-dom";
+// import { Redirect } from 'react-router';
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+// import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class User extends Component {

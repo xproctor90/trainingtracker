@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ class Workouts extends Component {
   loadWorkout = () => {
     API.getWorkouts()
       .then(res => {
-        console.log("workout: " + res.data[0])
+        console.log("workout: " + res.data[0].exercises[0])
         this.setState({ exercises: res.data, name: "" })
       })
       .catch(err => console.log(err));
