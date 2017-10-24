@@ -10,6 +10,7 @@ class Workouts extends Component {
   state = {
     exercises: [],
     name: "",
+    description: ""
   };
 
   componentDidMount() {
@@ -19,8 +20,8 @@ class Workouts extends Component {
   loadWorkout = () => {
     API.getWorkouts()
       .then(res => {
-        console.log("workout: " + res.data.exercises[0]);
-        this.setState({ exercises: res.data.exercises[0], name: "" })
+        console.log("workout: " + res.data.exercises);
+        this.setState({ exercises: res.data.exercises, name: "", description: "" })
       })
       .catch(err => console.log(err));
   };
