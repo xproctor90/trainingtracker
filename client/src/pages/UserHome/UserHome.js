@@ -10,7 +10,7 @@ class Workouts extends Component {
   state = {
     workouts: [],
     workoutName: "",
-    exercises: ""
+    exercises: []
   };
 
   componentDidMount() {
@@ -21,7 +21,7 @@ class Workouts extends Component {
     API.getWorkouts()
       .then(res => {
         console.log("workout: " + res.data);
-        this.setState({ exercises: res.data, workoutName: "", exercises: "" })
+        this.setState({ workouts: res.data, workoutName: "", exercises: [] })
       })
       .catch(err => console.log(err));
   };
@@ -44,7 +44,7 @@ class Workouts extends Component {
               <List>
                 {this.state.workouts.map(workout => (
                   <ListItem key={workout._id}>
-                      {workout.exercises.map(exercise => (
+                      {this.state.exercises.map(exercise => (
                         <ListItem key={exercise._id}>
                           <strong>
                             {exercise.name}
