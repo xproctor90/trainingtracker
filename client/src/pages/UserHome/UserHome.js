@@ -8,9 +8,9 @@ import { List, ListItem } from "../../components/List";
 
 class Workouts extends Component {
   state = {
-    exercises: [],
-    name: "",
-    description: ""
+    workouts: [],
+    workoutName: "",
+    exercises: ""
   };
 
   componentDidMount() {
@@ -20,8 +20,8 @@ class Workouts extends Component {
   loadWorkout = () => {
     API.getWorkouts()
       .then(res => {
-        console.log("workout: " + res.data.exercises);
-        this.setState({ exercises: res.data.exercises, name: "", description: "" })
+        console.log("workout: " + res.data);
+        this.setState({ exercises: res.data, workoutName: "", exercises: "" })
       })
       .catch(err => console.log(err));
   };
@@ -40,16 +40,18 @@ class Workouts extends Component {
             <Jumbotron>
               <h1>Workouts</h1>
             </Jumbotron>
-            {this.state.exercises.length ? (
+            {this.state.workouts.length ? (
               <List>
-                {this.state.exercises.map(exercise => (
-                  <ListItem key={exercise._id}>
-                    <Link to={"/exercise/" + exercise._id}>
-                      <strong>
-                        {exercise.name}
-                        {exercise.description}
-                      </strong>
-                    </Link>
+                {this.state.workouts.map(workout => (
+                  <ListItem key={workout._id}>
+                      {workout.exercises.map(exercise => (
+                        <ListItem key={exercise._id}>
+                          <strong>
+                            {exercise.name}
+                            {exercise.description}
+                          </strong>
+                        </ListItem>
+                      ))}
                   </ListItem>
                 ))}
               </List>
