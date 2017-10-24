@@ -44,7 +44,7 @@ class Workouts extends Component {
               <List>
                 {this.state.exercises.map(exercise => (
                   <ListItem key={exercise._id}>
-                    <Link to={"/workout/" + exercise._id}>
+                    <Link to={"/exercise/" + exercise._id}>
                       <strong>
                         {exercise.name}
                         {exercise.description}
