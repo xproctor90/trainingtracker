@@ -3,7 +3,9 @@ import "./Form.css";
 import { Button, Checkbox, Radio, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 
 // Depending on the current path, this component sets the "active" class on the appropriate Form link item
-const formInstance = (
+const formInstance = (props) =>
+<div>
+(
   <form>
     <FormGroup
       id="formControlsText"

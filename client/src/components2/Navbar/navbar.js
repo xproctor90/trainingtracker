@@ -3,7 +3,8 @@ import "./navbar.css";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem  } from "react-bootstrap";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-const myNavbar = (
+const myNavbar = (props) =>
+<div>(
   <Navbar inverse collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>

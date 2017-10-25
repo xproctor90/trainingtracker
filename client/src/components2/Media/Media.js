@@ -3,7 +3,8 @@ import { Media } from "react-bootstrap";
 
 // Depending on the current path, this component sets the "active" class on the appropriate slider link item
 
-const Media = (
+const Media = (props) =>
+<div>(
   <div>
     <Media>
      <Media.Left>
