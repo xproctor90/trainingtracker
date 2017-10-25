@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "client": "node scripts/start-client.js",
     "server": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.12.1"
   },
   "dependencies": {
     "axios": "^0.16.2",

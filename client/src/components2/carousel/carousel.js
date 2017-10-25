@@ -2,7 +2,8 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 // Depending on the current path, this component sets the "active" class on the appropriate slider link item
 
-const carousel = (
+const Slide = (props) =>
+<div>
   <Carousel>
     <Carousel.Item>
       <img width={900} height={500} alt="900x500" src="/assets/carousel.png"/>
@@ -26,5 +27,5 @@ const carousel = (
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-);
-export default carousel;
+</div>
+export default Slide;
