@@ -30,6 +30,17 @@ var userSchema = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
+  },
+  baseline: {
+    height: String,
+    weight: String,
+    bloodPressure: String,
+    restHeartRate: String,
+    waist: String,
+    pullUps: String,
+    pushUps: String,
+    sitUps: String,
+    mile: String
   }
 });
 
