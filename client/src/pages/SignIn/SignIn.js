@@ -32,6 +32,11 @@ class User extends Component {
     window.location.href = '/workout';
   };
 
+  register = event => {
+    event.preventDefault();
+    window.location.href = '/signup';
+  }
+
   render() {   
     return (
       <Container fluid>
@@ -50,6 +55,7 @@ class User extends Component {
               <Input
                 value={this.state.password}
                 onChange={this.handleInputChange}
+                type="password"
                 name="password"
                 placeholder="Password (required)"
               />
@@ -63,11 +69,21 @@ class User extends Component {
           </Col>
         </Row>
         <Row>
+<<<<<<< HEAD
           <Col size="md-3">
           </Col>
          <Col size="md-6">
          <h1> xavier rocks </h1>
           <Slide />
+=======
+         <Col size="md-12">
+         <br></br>
+         <FormBtn
+                onClick={this.register}
+              >
+                Create an Account
+              </FormBtn>
+>>>>>>> 1b7ab3b1dc8743e490c70ab2405988a5e1815d59
         </Col>
         <Col size="md-3">
           </Col>

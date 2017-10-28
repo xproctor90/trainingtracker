@@ -2,8 +2,14 @@ import React from "react";
 import { Button, Checkbox, Radio, FormGroup, ControlLabel, FormControl, ButtonToolbar } from "react-bootstrap";
 
 // Depending on the current path, this component sets the "active" class on the appropriate Form link item
+<<<<<<< HEAD
 const FormI = (props) =>
 <div>
+=======
+const formInstance = (props) =>
+(
+  <div>
+>>>>>>> 1b7ab3b1dc8743e490c70ab2405988a5e1815d59
   <form>
     <FormGroup
       id="formControlsText"
@@ -104,6 +110,11 @@ const FormI = (props) =>
   </ButtonToolbar>
 
   </form>
+<<<<<<< HEAD
+=======
+  </div>
+);
+>>>>>>> 1b7ab3b1dc8743e490c70ab2405988a5e1815d59
 
 
   </div>
