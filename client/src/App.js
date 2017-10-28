@@ -5,7 +5,7 @@ import SignUp from "./pages/SignUp";
 import UserHome from "./pages/UserHome";
 import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline";
-import Nav from "./components/Nav";
+import Navi from "./components3/Navi";
 
 // const App = () =>
 

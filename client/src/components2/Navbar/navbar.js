@@ -31,5 +31,5 @@ const myNavbar = (props) =>
     </Navbar.Collapse>
   </Navbar>
 );
-
+</div> 
 export default myNavbar;
