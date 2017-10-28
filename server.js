@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 var passport = require('passport');
 var session = require('express-session');
+var db = require('./models');
 
 app.use(session({ secret: 'training-tracker',resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
