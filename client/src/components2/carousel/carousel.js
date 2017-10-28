@@ -1,12 +1,13 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+// import * as IMG from "../../IMG/"; 
 // Depending on the current path, this component sets the "active" class on the appropriate slider link item
 
 const Slide = (props) =>
 <div>
   <Carousel>
     <Carousel.Item>
-      <img width={900} height={500} alt="Weight Room" src="https://i0.wp.com/kickthescale.com/wp-content/uploads/2015/09/The-Weight-Room-Strength-to-Weakness.jpg?fit=1100%2C733"/>
+      <img width={900} height={500} alt="Weight Room" src={require('../../IMG/fball1.jpg')}/>
       <Carousel.Caption>
         <h3>First slide label</h3>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

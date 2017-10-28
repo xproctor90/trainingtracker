@@ -7,12 +7,8 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-// import Slides
-import Slide from "../../components2/Carousel";
 // import Media
-import MediaB from "../../components2/Media";
-// import Form
-import FormI from "../../components2/Form";
+import Slide from "../../components2/Carousel";
 
 class User extends Component {
   state = {
@@ -69,13 +65,6 @@ class User extends Component {
           </Col>
         </Row>
         <Row>
-<<<<<<< HEAD
-          <Col size="md-3">
-          </Col>
-         <Col size="md-6">
-         <h1> xavier rocks </h1>
-          <Slide />
-=======
          <Col size="md-12">
          <br></br>
          <FormBtn
@@ -83,31 +72,8 @@ class User extends Component {
               >
                 Create an Account
               </FormBtn>
->>>>>>> 1b7ab3b1dc8743e490c70ab2405988a5e1815d59
         </Col>
-        <Col size="md-3">
-          </Col>
-          </Row>
-           <Row>
-          <Col size="md-3">
-          </Col>
-         <Col size="md-6">
-         <h1> Testimonials </h1>
-          <MediaB />
-        </Col>
-        <Col size="md-3">
-          </Col>
-          </Row>
-          <Row>
-          <Col size="md-3">
-          </Col>
-         <Col size="md-6">
-         <h1> BaseLine </h1>
-          <FormI />
-        </Col>
-        <Col size="md-3">
-          </Col>
-          </Row>
+        </Row>
 
       </Container>
     );
