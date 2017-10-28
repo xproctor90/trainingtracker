@@ -5,22 +5,42 @@ const routes = require("./routes");
 const app = express();
 var cors = require('cors')
 const PORT = process.env.PORT || 3001;
+var jwt = require('express-jwt');
+var jwks = require('jwks-rsa');
 
+var jwtCheck = jwt({
+  secret: jwks.expressJwtSecret({
+      cache: true,
+      rateLimit: true,
+      jwksRequestsPerMinute: 5,
+      jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
+  }),
+  audience: 'https://training-tracker-app.heroku.com',
+  issuer: "https://training-tracker.auth0.com/",
+  algorithms: ['RS256']
+});
+
+app.use(jwtCheck);
+
+app.get('/authorized', function (req, res) {
+res.send('Secured Resource');
+});
+
+// ====================
 // Passport
 
-var passport = require('passport');
-var session = require('express-session');
-var db = require('./models');
+// var passport = require('passport');
+// var session = require('express-session');
 
-app.use(session({ secret: 'training-tracker',resave: true, saveUninitialized:true})); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+// app.use(session({ secret: 'training-tracker',resave: true, saveUninitialized:true})); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
 
-// load passport strategies
-require('./config/passport.js')(passport, db.User);
+// // load passport strategies
+// require('./config/passport.js')(passport, db.User);
 
-var authRoute = require('./routes/api/auth-routes.js')(app, passport);
-
+// var authRoute = require('./routes/api/auth-routes.js')(app, passport);
+// =====================
 
 // CORS 
 app.use(cors())
