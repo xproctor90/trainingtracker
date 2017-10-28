@@ -60,8 +60,6 @@ class User extends Component {
         </Row>
         <Row>
          <Col size="md-12">
-         <h1> xavier rocks </h1>
-          <Slide />
         </Col>
         </Row>
 

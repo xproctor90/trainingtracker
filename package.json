@@ -9,6 +9,7 @@
     "server": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed-workout": "node scripts/workout-seedDB.js",
+    "seed-exercise": "node scripts/exercise-seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "express": "^4.15.4",
+    "jquery": "^3.2.1",
     "mongoose": "^4.11.7",
     "path": "^0.12.7",
     "react-router-dom": "^4.1.2"

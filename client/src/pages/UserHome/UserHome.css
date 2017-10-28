@@ -1,0 +1,7 @@
+.thumbnail {
+    background-color: white;
+}
+
+.thumbnail>img {
+    max-height: 275px;
+}

@@ -14,7 +14,7 @@ mongoose.connect(
 const workoutSeed = [
     {
       id: 1,
-      workoutName: "My first workout",
+      workoutName: "Workout 1",
       exercises: [  
       {
         id: 1,
@@ -55,7 +55,42 @@ const workoutSeed = [
         image: ["https://wger.de/media/exercise-images/113/Walking-lunges-1.png", "https://wger.de/media/exercise-images/113/Walking-lunges-2.png"],
         time: 2
       }]
-    }
+    },
+    {
+      id: 2,
+      workoutName: "Workout 2",
+      exercises: [
+        {
+          id: 6,
+          name: "Negative Crunches",
+          description: "Sit yourself on the decline bench and fix your legs. Cross your arms over the chest and bring with a rolling movement your upper body up, go now without a pause and with a slow movement down again. Don't let your head move during the exercise.",
+          image: ["https://wger.de/media/exercise-images/93/Decline-crunch-1.png", "https://wger.de/media/exercise-images/93/Decline-crunch-2.png"]
+        },
+        {
+          id: 7,
+          name: "Hyperextensions",
+          description: "Lay on the hyperextension pad with the belly button just at the leading edge, the upper body can hang freely. Tense your whole back's muscles and bring your upper body up till it is horizontal, but not more. Go slowly down and don't relax your muscles.",
+          image: ["https://wger.de/media/exercise-images/128/Hyperextensions-1.png", "https://wger.de/media/exercise-images/128/Hyperextensions-2.png"]
+        },
+        {
+          id: 8,
+          name: "Bench Press Narrow Grip",
+          description: "Lay down on a bench, the bar is directly over your eyes, the knees form a slight angle and the feet are firmly on the ground. Hold the bar with a narrow grip (around 20cm.). Lead the weight slowly down till the arms are parallel to the floor (elbow: right angle), press then the bar up. When bringing the bar down, don't let it down on your nipples as with the regular bench pressing, but somewhat lower.",
+          image: ["https://wger.de/media/exercise-images/88/Narrow-grip-bench-press-1.png", "https://wger.de/media/exercise-images/88/Narrow-grip-bench-press-2.png"]
+        },
+        {
+          id: 9,
+          name: "Dips",
+          description: "Hold onto the bars at a narrow place (if they are not parallel) and press yourself up, but don't stretch the arms completely, so the muscles stay during the whole exercise under tension. Now bend the arms and go down as much as you can, keeping the elbows always pointing back, At this point, you can make a short pause before repeating the movement.",
+          image: ["https://wger.de/media/exercise-images/82/Tricep-dips-2-1.png", "https://wger.de/media/exercise-images/82/Tricep-dips-2-2.png"]
+        },
+        {
+          id: 10,
+          name: "Leg Raises, Lying",
+          description: "Lay down on a bench and hold onto the recliner with your hands to keep you stable. Hold your legs straight and lift them till they make an angle of about 45°. Make a short pause of 1 sec. and go slowly down to the initial position. To increase the intensity you can make a longer pause of 7 sec. every 5th time.",
+          image: ["https://wger.de/media/exercise-images/125/Leg-raises-1.png", "https://wger.de/media/exercise-images/125/Leg-raises-2.png"]
+        }]
+      }
   ];
 
   db.Workout
