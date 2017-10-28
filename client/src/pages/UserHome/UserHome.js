@@ -5,6 +5,8 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
+import { Thumbnail } from "react-bootstrap";
+import "./UserHome.css";
 
 class Workouts extends Component {
   state = {
@@ -37,19 +39,29 @@ class Workouts extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            {/* <Jumbotron>
               <h1>Workouts</h1>
-            </Jumbotron>
+            </Jumbotron> */}
             {this.state.workouts.length ? (
               <List>
                 {this.state.workouts.map(workout => (
                   <ListItem key={workout._id}>
+                    <h2>{workout.workoutName}</h2>
                       {workout.exercises.map(exercise => (
                         <ListItem key={exercise._id}>
                           <strong>
-                            {exercise.name}
+                            <h3>{exercise.name}</h3>
                             {exercise.description}
-                          </strong>
+                            <Row>
+                            <br></br>
+                            <Col size="xs-12 md-6">
+                            <Thumbnail bsClass="thumbnail" src={exercise.image[0]}/>
+                            </Col>
+                            <Col size="xs-12 md-6">
+                            <Thumbnail bsClass="thumbnail" src={exercise.image[1]}/>
+                            </Col>
+                            </Row>
+                            </strong>
                         </ListItem>
                       ))}
                   </ListItem>

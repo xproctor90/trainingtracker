@@ -1,5 +1,5 @@
 import React from "react";
-import "./Form.css";
+import "./BaselineForm.css";
 import { Button, Checkbox, Radio, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
 
 // Depending on the current path, this component sets the "active" class on the appropriate Form link item
@@ -10,8 +10,14 @@ const formInstance = (props) =>
     <FormGroup
       id="formControlsText"
       type="text"
-      label="Text"
-      placeholder="Enter text"
+      label="Height"
+      placeholder="Enter height in inches"
+    />
+    <FormGroup
+      id="formControlsText"
+      type="text"
+      label="Weight"
+      placeholder="Enter height in pounds"
     />
     <FormGroup
       id="formControlsEmail"
