@@ -63,11 +63,11 @@ class App extends Component {
             }
           </Navbar.Header>
         </Navbar>
-        <Switch>
+        {/* <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/workout" component={UserHome} />
           <Route component={NoMatch} />
-        </Switch>
+        </Switch> */}
 
       </div>
     );
