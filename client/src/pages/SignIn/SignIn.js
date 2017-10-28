@@ -7,8 +7,12 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-// import Media
+// import Slides
 import Slide from "../../components2/Carousel";
+// import Media
+import MediaB from "../../components2/Media";
+// import Form
+import FormI from "../../components2/Form";
 
 class User extends Component {
   state = {
@@ -59,11 +63,35 @@ class User extends Component {
           </Col>
         </Row>
         <Row>
-         <Col size="md-12">
+          <Col size="md-3">
+          </Col>
+         <Col size="md-6">
          <h1> xavier rocks </h1>
           <Slide />
         </Col>
-        </Row>
+        <Col size="md-3">
+          </Col>
+          </Row>
+           <Row>
+          <Col size="md-3">
+          </Col>
+         <Col size="md-6">
+         <h1> Testimonials </h1>
+          <MediaB />
+        </Col>
+        <Col size="md-3">
+          </Col>
+          </Row>
+          <Row>
+          <Col size="md-3">
+          </Col>
+         <Col size="md-6">
+         <h1> BaseLine </h1>
+          <FormI />
+        </Col>
+        <Col size="md-3">
+          </Col>
+          </Row>
 
       </Container>
     );
