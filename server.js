@@ -22,18 +22,12 @@ var jwtCheck = jwt({
 
 app.use(jwtCheck);
 
-<<<<<<< HEAD
 app.get('/authorized', function (req, res) {
 res.send('Secured Resource');
 });
 
 // ====================
 // Passport
-=======
-var passport = require('passport');
-var session = require('express-session');
-var db = require('./models');
->>>>>>> master
 
 // var passport = require('passport');
 // var session = require('express-session');
