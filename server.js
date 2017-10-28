@@ -3,10 +3,26 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
- var cors = require('cors')
+var cors = require('cors')
 const PORT = process.env.PORT || 3001;
 
- app.use(cors())
+// Passport
+
+var passport = require('passport');
+var session = require('express-session');
+
+app.use(session({ secret: 'training-tracker',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+// load passport strategies
+require('./config/passport.js')(passport, db.User);
+
+var authRoute = require('./routes/auth-routes.js')(app, passport);
+
+
+// CORS 
+app.use(cors())
 
  app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
