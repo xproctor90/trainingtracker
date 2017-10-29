@@ -6,7 +6,7 @@ import UserHome from "./pages/UserHome";
 import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline";
 import Nav from "./components/Nav";
-import Auth0 from "./components/auth/auth.js";
+import Auth0 from "./components/auth/auth.js";  
 
 const App = () =>
 
