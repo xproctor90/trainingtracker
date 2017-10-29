@@ -5,7 +5,7 @@ import SignUp from "./pages/SignUp";
 import UserHome from "./pages/UserHome";
 import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline";
-import Navi from "./components3/Navi";
+import Nav from "./components/Nav";
 
 // const App = () =>
 
@@ -63,11 +63,11 @@ class App extends Component {
             }
           </Navbar.Header>
         </Navbar>
-        {/* <Switch>
+        <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/workout" component={UserHome} />
           <Route component={NoMatch} />
-        </Switch> */}
+        </Switch>
 
       </div>
     );
