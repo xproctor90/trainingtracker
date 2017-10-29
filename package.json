@@ -25,13 +25,10 @@
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "express": "^4.15.4",
-<<<<<<< HEAD
     "express-jwt": "^5.3.0",
     "jwks-rsa": "^1.2.1",
-=======
     "express-session": "^1.15.6",
     "jquery": "^3.2.1",
->>>>>>> master
     "mongoose": "^4.11.7",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
