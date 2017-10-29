@@ -5,21 +5,23 @@ import SignUp from "./pages/SignUp";
 import UserHome from "./pages/UserHome";
 import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline";
-import Nav from "./components/Nav";
+import Navi from "./components3/Navi";
 import Auth0 from "./components/auth/auth.js";  
 
 const App = () =>
 
-  
-  <Router>
-    <div>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={SignIn} />
-        <Route exact path="/workout" component={UserHome} />
+   <Router>
+     <div>
+       <Navi />
+       <Switch>
+         <Route exact path="/" component={SignIn} />
+         <Route exact path="/SignUp" component={SignUp} />
+         <Route exact path="/workout" component={UserHome} />
+         <Route exact path="/Baseline" component={Baseline} />
+        {/*<Route exact path="/AboutUs" component={AboutUs} />*/}
         <Route component={NoMatch} />
-      </Switch>
-    </div>
-  </Router>;
+       </Switch>
+     </div>
+   </Router>;
 
 export default App;

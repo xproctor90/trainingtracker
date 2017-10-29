@@ -7,8 +7,6 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-// import Media
-import Slide from "../../components2/Carousel";
 
 class User extends Component {
   state = {
