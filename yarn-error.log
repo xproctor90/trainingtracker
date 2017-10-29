@@ -1,5 +1,6 @@
 Arguments: 
-  /usr/local/Cellar/node/7.10.0/bin/node /usr/local/bin/yarn build
+
+  /usr/local/Cellar/node/7.10.0/bin/node /usr/local/bin/yarn start
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands
