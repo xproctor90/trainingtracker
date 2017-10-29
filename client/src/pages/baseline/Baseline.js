@@ -10,6 +10,7 @@ import { formInstance } from "../../components2/BaselineForm";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 // import "./BaselineForm.css";
 import { Button, Checkbox, Radio, FormGroup, ControlLabel, FormControl } from "react-bootstrap";
+import FormInst from "../../components2/FormI";
 
 
 
@@ -60,73 +61,22 @@ class Baseline extends Component {
         return (
           <Container fluid>
             <Row>
-              <Col size="md-12">
+              <Col size="md-2"></Col>
+
+              <Col size="md-8">
                 <Jumbotron>
                   <h1>Baseline Test</h1>
                 </Jumbotron>
-                <form>
-                <Input
-                value={this.state.height}
-                onChange={this.handleInputChange}
-                name="Height"
-                placeholder="Height"
-                />
-                <Input
-                  value={this.state.weight}
-                  onChange={this.handleInputChange}
-                  name="Weight"
-                  placeholder="Weight"
-                />
-                <Input
-                  value={this.state.bloodPressure}
-                  onChange={this.handleInputChange}
-                  name="Blood Pressure"
-                  placeholder="Blood Pressure"
-                />
-                <Input
-                  value={this.state.restHeartRate}
-                  onChange={this.handleInputChange}
-                  name="Resting Heart Rate"
-                  placeholder="Resting Heart Rate"
-                />
-                <Input
-                  value={this.state.waist}
-                  onChange={this.handleInputChange}
-                  name="Waist Circumference"
-                  placeholder="Waist Circumference"
-                />
-                <Input
-                  value={this.state.pullUps}
-                  onChange={this.handleInputChange}
-                  name="Pull-Ups"
-                  placeholder="Maximum number of consecutive pull-ups"
-                />
-                <Input
-                  value={this.state.pushUps}
-                  onChange={this.handleInputChange}
-                  name="Push-Ups"
-                  placeholder="Maximum number of consecutive push-ups"
-                />
-                <Input
-                  value={this.state.sitUps}
-                  onChange={this.handleInputChange}
-                  name="Sit-Ups"
-                  placeholder="Maximum number of consecutive sit-ups"
-                />
-                <Input
-                  value={this.state.mile}
-                  onChange={this.handleInputChange}
-                  name="One Mile Test"
-                  placeholder="Run/walk one mile as fast as you can"
-                />
-                <FormBtn
-                  disabled={!(this.state.height && this.state.weight && this.state.bloodPressure && this.state.restHeartRate && this.state.waist && this.state.pullUps && this.state.pushUps && this.state.sitUps && this.state.mile)}
-                  onClick={this.login}
-                >
-                Submit
-                </FormBtn>
-                </form>
+                </Col>
+
+                <Col size="md-2"></Col>
+                </Row> 
+                <Row>
+                <Col size="md-2"></Col>
+                <Col size="md-8">
+               <FormInst />
               </Col>
+              <Col size="md-2"></Col>
             </Row>
             <Row>
              <Col size="md-12">
