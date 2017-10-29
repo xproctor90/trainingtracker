@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
+
+
 export default class Navi extends React.Component {
   constructor(props) {
     super(props);
@@ -22,28 +24,22 @@ export default class Navi extends React.Component {
       <div>
         <Nav pills>
           <NavItem>
-            <NavLink href="#" active>Link</NavLink>
-          </NavItem>
-          <NavDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle nav caret>
-              Dropdown
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-          </NavDropdown>
-          <NavItem>
-            <NavLink href="#">Link</NavLink>
+            <NavLink href="/" active>Sign In</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Another Link</NavLink>
+            <NavLink href="/Baseline" active>Base Line</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink disabled href="#">Disabled Link</NavLink>
+            <NavLink href="/workout" active>Workout</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" active>Work Out Tips</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" active>About</NavLink>
+          </NavItem>
+          <NavItem>
+           <NavLink href="https://github.com/xproctor90/trainingtracker" active>GitHub</NavLink>
           </NavItem>
         </Nav>
       </div>

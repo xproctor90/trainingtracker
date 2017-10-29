@@ -7,8 +7,8 @@ import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline";
 import Navi from "./components3/Navi";
 
-// const App = () =>
-
+const App = () =>
+/*
 class App extends Component {
   goTo(route) {
     this.props.history.replace(`/${route}`)
@@ -67,24 +67,27 @@ class App extends Component {
           <Route exact path="/" component={SignIn} />
           <Route exact path="/workout" component={UserHome} />
           <Route component={NoMatch} />
-        </Switch> */}
-
+        </Switch> }*/
+/*
       </div>
     );
   }
 }
 
 export default App;
-  
-//   <Router>
-//     <div>
-//       <Nav />
-//       <Switch>
-//         <Route exact path="/" component={SignIn} />
-//         <Route exact path="/workout" component={UserHome} />
-//         <Route component={NoMatch} />
-//       </Switch>
-//     </div>
-//   </Router>;
+*/  
+       <Router>
+     <div>
+       <Navi />
+       <Switch>
+         <Route exact path="/" component={SignIn} />
+         <Route exact path="/SignUp" component={SignUp} />
+         <Route exact path="/workout" component={UserHome} />
+         <Route exact path="/Baseline" component={Baseline} />
+        {/*<Route exact path="/AboutUs" component={AboutUs} />*/}
+        <Route component={NoMatch} />
+       </Switch>
+     </div>
+   </Router>;
 
-// export default App;
+export default App;
