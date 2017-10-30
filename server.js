@@ -13,10 +13,13 @@ var jwtCheck = jwt({
       cache: true,
       rateLimit: true,
       jwksRequestsPerMinute: 5,
-      jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
+      // jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
+      jwksUri: "http://localhost:3000.auth0.com/.well-known/jwks.json"      
   }),
-  audience: 'https://training-tracker-app.heroku.com',
-  issuer: "https://training-tracker.auth0.com/",
+  // audience: 'https://training-tracker-app.heroku.com',
+  audience: 'http://localhost:3000',  
+  // issuer: "https://training-tracker.auth0.com/",
+  issuer: "http://localhost:3000.auth0.com/",  
   algorithms: ['RS256']
 });
 

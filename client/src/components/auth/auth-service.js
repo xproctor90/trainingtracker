@@ -1,11 +1,15 @@
 import auth0 from 'auth0-js';
+import history from '../../history';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
-    domain: 'training-tracker.auth0.com',
+    // domain: 'training-tracker.auth0.com',
+    domain: 'localhost:3000.auth0.com',
     clientID: 'v0NZFG6fEe3yJxlz86kCtD4E8yZFeTgi',
-    redirectUri: 'https://training-tracker-app.heroku.com/workout',
-    audience: 'https://training-tracker.auth0.com/userinfo',
+    // redirectUri: 'https://training-tracker-app.heroku.com/workout',
+    redirectUri: 'http://localhost:3000/workout',    
+    // audience: 'https://training-tracker.auth0.com/userinfo',
+    audience: 'http://localhost:3000.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid'
   });

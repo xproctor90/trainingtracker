@@ -1,3 +1,5 @@
+import { Component, React } from 'react';
+import { Navbar, Button } from 'react-bootstrap';
 import Auth from './auth-service.js';
 
 const auth = new Auth();
