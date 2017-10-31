@@ -1,77 +1,90 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const routes = require("./routes");
+const express = require('express');
 const app = express();
-var cors = require('cors')
-const PORT = process.env.PORT || 3001;
-{/* var jwt = require('express-jwt');
-var jwks = require('jwks-rsa');
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
+// const bodyParser = require("body-parser");
+// const mongoose = require("mongoose");
+// const routes = require("./routes");
+// const PORT = process.env.PORT || 3001;
 
-var jwtCheck = jwt({
-  secret: jwks.expressJwtSecret({
-      cache: true,
-      rateLimit: true,
-      jwksRequestsPerMinute: 5,
-      jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
+const cors = require('cors');
+require('dotenv').config();
+
+if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
+  throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
+}
+
+app.use(cors());
+
+const checkJwt = jwt({
+  // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`
   }),
-  audience: 'https://training-tracker-app.heroku.com',
-  issuer: "https://training-tracker.auth0.com/",
+
+  // Validate the audience and the issuer.
+  audience: process.env.AUTH0_AUDIENCE,
+  issuer: `https://${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256']
 });
 
-app.use(jwtCheck); 
+const checkScopes = jwtAuthz(['read:messages']);
 
-app.get('/authorized', function (req, res) {
-res.send('Secured Resource');
-});*/} 
-
-// ====================
-// Passport
-
-// var passport = require('passport');
-// var session = require('express-session');
-
-// app.use(session({ secret: 'training-tracker',resave: true, saveUninitialized:true})); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session()); // persistent login sessions
-
-// // load passport strategies
-// require('./config/passport.js')(passport, db.User);
-
-// var authRoute = require('./routes/api/auth-routes.js')(app, passport);
-// =====================
-
-// CORS 
-app.use(cors())
-
- app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
- })
-
- app.listen(3000, function () {
-  console.log('CORS-enabled web server listening on port 3000')
- })
-
-// Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-// Serve up static assets
-app.use(express.static("client/build"));
-// Add routes, both API and view
-app.use(routes);
-// Set up promises with mongoose
-mongoose.Promise = global.Promise;
-// Connect to the Mongo DB
-mongoose.connect(
-// process.env.MONGODB_URI || "mongodb://heroku_6fkdpj10:f0j84fm11lgdm41kb4i6963odi@ds227565.mlab.com:27565/heroku_6fkdpj10",
-  process.env.MONGODB_URI || "mongodb://localhost/trainingtracker",
-  {
-    useMongoClient: true
-  }
-);
-
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.get('/api/public', function(req, res) {
+  res.json({
+    message: "Hello from a public endpoint! You don't need to be authenticated to see this."
+  });
 });
+
+app.get('/api/private', checkJwt, checkScopes, function(req, res) {
+  res.json({
+    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.'
+  });
+});
+
+app.listen(3001);
+console.log('Listening on http://localhost:3001');
+
+
+
+
+
+
+
+
+
+
+//  app.get('/products/:id', function (req, res, next) {
+//   res.json({msg: 'This is CORS-enabled for all origins!'})
+//  })
+
+//  app.listen(3000, function () {
+//   console.log('CORS-enabled web server listening on port 3000')
+//  })
+
+// // Configure body parser for AJAX requests
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+// // Serve up static assets
+// app.use(express.static("client/build"));
+// // Add routes, both API and view
+// app.use(routes);
+// // Set up promises with mongoose
+// mongoose.Promise = global.Promise;
+// // Connect to the Mongo DB
+// mongoose.connect(
+// // process.env.MONGODB_URI || "mongodb://heroku_6fkdpj10:f0j84fm11lgdm41kb4i6963odi@ds227565.mlab.com:27565/heroku_6fkdpj10",
+//   process.env.MONGODB_URI || "mongodb://localhost/trainingtracker",
+//   {
+//     useMongoClient: true
+//   }
+// );
+
+// // Start the API server
+// app.listen(PORT, function() {
+//   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+// });
