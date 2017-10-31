@@ -1,9 +1,9 @@
 import React from 'react';
 import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
-
-
+import { login, logout, isLoggedIn } from '../../utils/auth-service';
 
 export default class Navi extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -19,19 +19,39 @@ export default class Navi extends React.Component {
     });
   }
 
+  // login() {
+  //   lock.show(function(err, profile, token) {
+  //     if (err) {
+  //       // Error callback
+  //       console.error("Something went wrong: ", err);
+  //     } else {
+  //       // Success calback  
+  
+  //       // Save the JWT token.
+  //       localStorage.setItem('userToken', token);
+  //       // Save the profile
+  //       localStorage.setItem('userProfile', JSON.stringify(profile));
+  //     }
+  //   });
+  // }
+
   render() {
     return (
       <div>
         <Nav pills>
           <NavItem>
-            <NavLink href="/" active>Sign In</NavLink>
-          </NavItem>
+            {
+              ( isLoggedIn() ) ? <NavLink href="/" active>Log Out</NavLink> : <NavLink href="/workout" active>Sign In</NavLink>
+            }  
+            </NavItem>
           <NavItem>
             <NavLink href="/Baseline" active>Base Line</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/workout" active>Workout</NavLink>
-          </NavItem>
+            {
+              ( isLoggedIn() ) ? <NavLink href="/workout" active>Workout</NavLink> : ''
+            }  
+            </NavItem>
           <NavItem>
             <NavLink href="#" active>Work Out Tips</NavLink>
           </NavItem>

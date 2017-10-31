@@ -3,28 +3,29 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-var cors = require('cors')
+const cors = require('cors')
 const PORT = process.env.PORT || 3001;
-var jwt = require('express-jwt');
-var jwks = require('jwks-rsa');
+// const jwt = require('express-jwt');
+// const jwks = require('jwks-rsa');
 
-var jwtCheck = jwt({
-  secret: jwks.expressJwtSecret({
-      cache: true,
-      rateLimit: true,
-      jwksRequestsPerMinute: 5,
-      jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
-  }),
-  audience: 'https://training-tracker-app.heroku.com',
-  issuer: "https://training-tracker.auth0.com/",
-  algorithms: ['RS256']
-});
+// const jwtCheck = jwt({
+//   secret: jwks.expressJwtSecret({
+//       cache: true,
+//       rateLimit: true,
+//       jwksRequestsPerMinute: 5,
+//       jwksUri: "https://training-tracker.auth0.com/.well-known/jwks.json"
+//   }),
+//   audience: 'https://training-tracker-app.heroku.com',
+//   issuer: "https://training-tracker.auth0.com/",
+//   algorithms: ['RS256']
+// });
 
-app.use(jwtCheck);
+// not in example 24-28
+// app.use(jwtCheck);
 
-app.get('/authorized', function (req, res) {
-res.send('Secured Resource');
-});
+// app.get('/authorized', jwtCheck, function (req, res) {
+//   res.send('Secured Resource');
+// });
 
 // ====================
 // Passport
@@ -43,7 +44,7 @@ res.send('Secured Resource');
 // =====================
 
 // CORS 
-app.use(cors())
+app.use(cors());
 
  app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
