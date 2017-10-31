@@ -9,10 +9,14 @@ import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class User extends Component {
-  state = {
+ constructor () {
+  super();
+   this.state = {
     username: "",
     password: "",
   };
+ }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;

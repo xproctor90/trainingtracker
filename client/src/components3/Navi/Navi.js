@@ -24,6 +24,9 @@ export default class Navi extends React.Component {
       <div>
         <Nav pills>
           <NavItem>
+            <NavLink href="/Home" active>Home</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink href="/" active>Sign In</NavLink>
           </NavItem>
           <NavItem>
@@ -33,10 +36,7 @@ export default class Navi extends React.Component {
             <NavLink href="/workout" active>Workout</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" active>Work Out Tips</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#" active>About</NavLink>
+            <NavLink href="/AboutPage" active>About</NavLink>
           </NavItem>
           <NavItem>
            <NavLink href="https://github.com/xproctor90/trainingtracker" active>GitHub</NavLink>

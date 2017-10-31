@@ -1,3 +1,4 @@
+
 import auth0 from 'auth0-js';
 
 export default class Auth {
@@ -20,6 +21,7 @@ export default class Auth {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // navigate to the home route
-    history.replace('/');
+    history.replace('/'); //eslint-disable-line
+
   }
 }

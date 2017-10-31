@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
@@ -7,7 +8,7 @@ const style = {
   marginLeft: 20,
 };
 
-const ContactUs = (props) => (
+const Contact = (props) => (
   <Paper zDepth={2}>
     <TextField hintText="First name" style={style} underlineShow={false} />
     <Divider />
@@ -20,4 +21,4 @@ const ContactUs = (props) => (
   </Paper>
 );
 
-export default ContactUs;
+export default Contact;

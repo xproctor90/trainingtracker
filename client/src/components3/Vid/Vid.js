@@ -1,8 +1,6 @@
-'use strict';
-import React from 'react';
 import React, {Component} from 'react';
 
-class Vid extends Component {
+class Video extends Component {
     constructor (props) {
         super(props);
 
@@ -22,4 +20,4 @@ class Vid extends Component {
     }
 };
 
-export default Vid;
+export default Video;
