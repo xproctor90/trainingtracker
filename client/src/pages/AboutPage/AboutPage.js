@@ -14,7 +14,8 @@ import FormInst from "../../components2/FormI";
 import Cards from "../../components3/Abt";
 import MediaB from "../../components2/Media";
 import Video from "../../components3/Vid";
-
+import Card from "../../components3/FlipCard";
+import './AboutPage.css';
 
 
 const AboutPage = () =>   
@@ -33,23 +34,9 @@ const AboutPage = () =>
                 <Row>
                 <Col size="md-1"></Col>
                 <Col size="md-10">
-               <Cards />
+               <Card />
               </Col>
               <Col size="md-1"></Col>
-            </Row>
-            <Row>
-            <Col size="md-2"></Col>
-             <Col size="md-8">
-             <MediaB />
-            </Col>
-            <Col size="md-2"></Col>
-            </Row>
-            <Row>
-            <Col size="md-1"></Col>
-             <Col size="md-10">
-             <Video />
-            </Col>
-            <Col size="md-1"></Col>
             </Row>
           </Container>
 export default AboutPage;

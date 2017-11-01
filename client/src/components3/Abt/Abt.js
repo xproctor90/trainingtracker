@@ -10,11 +10,11 @@ const Cards = (props) =>
 <div className="media-object-basics-example">
   <MediaObject>
     <MediaObjectSection>
-      <Thumbnail src="//unsplash.it/100"/>
+      <Thumbnail src={require('../../IMG/pt1.jpg')}/>
     </MediaObjectSection>
     <MediaObjectSection isMain>
-      <h4>Dreams feel real while we're in them.</h4>
-      <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+      <h4>We want everyone to be healthy.</h4>
+      <p>We at Training Tracker love what we do! We started our journey on a sunny...strangley warm fall day. From that day forward we have been commited to helping people get in shape and get healthy </p>
     </MediaObjectSection>
   </MediaObject>
 </div>

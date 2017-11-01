@@ -7,24 +7,24 @@ const Slide = (props) =>
 <div>
   <Carousel>
     <Carousel.Item>
-      <img width={900} height={500} alt="Weight Room" src={require('../../IMG/fball1.jpg')}/>
+      <img width={1000} height={500} alt="Weight Room" src={require('../../IMG/fball1.jpg')}/>
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Do you need a personal trainer?</h3>
+        <p>We got you covered!</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={1200} height={500} alt="Weight Room #2" src={require('../../IMG/pt1.jpg')}/>
+      <img width={1000} height={500} alt="Weight Room #2" src={require('../../IMG/pt1.jpg')}/>
       <Carousel.Caption>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>Login,</h3>
+        <p>do the baseline test & meet your trainer bot then start getting results!.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={900} height={500} alt="900x500" src={require('../../IMG/pt2.jpg')}/>
+      <img width={1000} height={500} alt="900x500" src={require('../../IMG/pt2.jpg')}/>
       <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h3>Use our trainers and our great tips!</h3>
+        <p>connect with your training tracker today!.</p>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

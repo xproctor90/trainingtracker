@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home.js";
 import NoMatch from "./pages/NoMatch";
 import Baseline from "./pages/Baseline/Baseline.js";
 import Navi from "./components3/Navi";
+import Foot from "./components3/Footer";
 
 //import Auth0 from "./components/auth/auth.js";  
 
@@ -27,6 +28,7 @@ const App = () =>
         <Route exact path="/Home" component={Home} />
         <Route component={NoMatch} />
        </Switch>
+       <Foot />
      </div>
    </Router>;
 

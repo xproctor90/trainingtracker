@@ -36,7 +36,6 @@ const Home = () =>
             <Row>
             <Col size="md-1"></Col>
              <Col size="md-10">
-             <Video />
             </Col>
             <Col size="md-1"></Col>
             </Row>
