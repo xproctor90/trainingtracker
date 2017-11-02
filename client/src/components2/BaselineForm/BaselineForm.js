@@ -98,7 +98,7 @@ const formInstance = (props) =>
       </FormControl.Static>
     </FormGroup>
 
-    <Button type="submit">
+    <Button type="submit" href="/workout">
       Submit
     </Button>
   </form>

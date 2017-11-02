@@ -32,7 +32,7 @@ const FormInst = (props) =>(
     />
 
     <FormGroup controlId="formControlsSelect">
-      <ControlLabel>How much do you weight?</ControlLabel>
+      <ControlLabel>How much do you weigh?</ControlLabel>
       <FormControl componentClass="select" placeholder="select">
         <option value="select">Weight</option>
         <option value="100">100</option>
@@ -127,14 +127,14 @@ const FormInst = (props) =>(
     </FormGroup>
            <FormGroup controlId="formControlsSelect">
       <ControlLabel>Run/walk one mile as fast as you can</ControlLabel>
-      <FormControl componentClass="select" placeholder="select">
-        <option value="select">pull-ups</option>
+      <FormControl componentClass="textarea" placeholder="One mile time">
+        {/* <option value="select">pull-ups</option>
         <option value="5">5 or Less</option>
         <option value="10">6-10</option>
         <option value="15">11-15</option>
         <option value="20">16-20</option>
         <option value="25">21-25</option>
-        <option value="30">26-30</option>
+        <option value="30">26-30</option> */}
       </FormControl>
     </FormGroup>
     <FormGroup controlId="formControlsSelect">
@@ -152,7 +152,7 @@ const FormInst = (props) =>(
     </FormGroup>
   
   <ButtonToolbar>
-    <Button bsStyle="primary" bsSize="large" active>Primary button
+    <Button href="/workout" bsStyle="primary" bsSize="large" active>Submit
     </Button>
   </ButtonToolbar>
 
