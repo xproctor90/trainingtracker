@@ -8,7 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Thumbnail } from "react-bootstrap";
 import "./UserHome.css";
 
-class Workouts extends Component {
+class UserHome extends Component {
   state = {
     workouts: [],
     workoutName: "",
@@ -77,4 +77,4 @@ class Workouts extends Component {
   }
 }
 
-export default Workouts;
+export default UserHome;

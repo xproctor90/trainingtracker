@@ -1,35 +1,99 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Navbar, Button } from 'react-bootstrap';import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import AboutPage from "./pages/AboutPage";
-import UserHome from "./pages/UserHome";
-import Home from "./pages/Home/Home.js";
-import NoMatch from "./pages/NoMatch";
-import Baseline from "./pages/Baseline/Baseline.js";
-import Navi from "./components3/Navi";
-import Foot from "./components3/Footer";
+import React from 'react';
+import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavbarBrand, NavbarToggler, NavLink } from 'reactstrap';
+import './App.css';
 
-//import Auth0 from "./components/auth/auth.js";  
+export default class App extends React.Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
 
-const App = () =>
+  login() {
+    this.props.auth.login();
+  }
 
-   <Router>
-     <div>
-       <Navi />
-       <Switch>
-         <Route exact path="/" component={SignIn} />
-         <Route exact path="/SignUp" component={SignUp} />
-          <Route exact path="/AboutPage" component={AboutPage} />
-         <Route exact path="/workout" component={UserHome} />
-         <Route exact path="/Baseline" component={Baseline} />
-        <Route exact path="/Home" component={Home} />
-        <Route component={NoMatch} />
-       </Switch>
-       <Foot />
-     </div>
-   </Router>;
+  logout() {
+    this.props.auth.logout();
+  }
+  
+  constructor(props) {
+    super(props);
 
-export default App;
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  render() {
+    const  { isAuthenticated }  = this.props.auth;
+
+    return (
+      <div>
+        <Nav pills >
+          <NavItem>
+            <NavbarBrand href="/" >Training Tracker</NavbarBrand>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/Home" active>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/AboutPage" active>About</NavLink>
+          </NavItem>
+          {
+            !isAuthenticated() && (
+              ''
+            )
+          }
+          {
+            isAuthenticated() && (
+            <NavItem>
+              <NavLink href="/Baseline" active>Base Line</NavLink>
+            </NavItem>
+            )
+          }
+          {
+            !isAuthenticated() && (
+              ''
+            )
+          }
+          {
+            isAuthenticated() && (
+          <NavItem>
+            <NavLink href="/workout" active>Workout</NavLink>
+          </NavItem>
+            )
+          }
+          {/* <NavItem>
+           <NavLink href="https://github.com/xproctor90/trainingtracker" active>GitHub</NavLink>
+          </NavItem> */}
+          {
+            !isAuthenticated() && (
+          <NavItem>
+            <NavLink 
+              onClick={this.login.bind(this)}
+              > Sign In
+            </NavLink>
+          </NavItem>
+            )
+          }
+          {
+            isAuthenticated() && (
+              <NavItem>
+                <NavLink
+                  onClick={this.logout.bind(this)}
+                > Log Out
+                </NavLink>
+              </NavItem>
+            )
+          }
+        </Nav>
+      </div>
+    );
+  }
+}
